@@ -1,21 +1,32 @@
-import React from 'react';
-import { HashRouter, Link, Route, Switch } from 'react-router-dom';
-import HomePage from './pages/HomePage';
+import React from "react";
+import HomePage from "./pages/HomePage";
+import AboutPage from "./pages/AboutPage";
+import {Tab, TabList, TabPanel, Tabs} from "react-tabs";
+import AnimePage from "./pages/AnimePage";
+import ContactPage from "./pages/ContactPage";
 
 function App() {
     return (
-        <div className="App">
-            <HashRouter>
-                <nav>
-                    <Link to="/">Home</Link> {" "}
-                    <Link to="/anime">Anime's</Link> {" "}
-                </nav>
-                <Switch>
-                    <Route exact path="/" component={HomePage} />
-                    <Route exact path="/test" component={HomePage} />
-                </Switch>
-            </HashRouter>
-        </div>
+        <Tabs >
+        <TabList>
+            <Tab>Home</Tab>
+            <Tab>About</Tab>
+            <Tab>Anime's'</Tab>
+            <Tab>Contact us</Tab>
+        </TabList>
+    <TabPanel>
+        <HomePage/>
+    </TabPanel>
+    <TabPanel>
+        <AboutPage/>
+    </TabPanel>
+    <TabPanel>
+        <AnimePage/>
+    </TabPanel>
+    <TabPanel>
+    <ContactPage/>
+    </TabPanel>
+</Tabs>
     );
 }
 
