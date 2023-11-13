@@ -1,9 +1,10 @@
 import React from "react";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
-import {Tab, TabList, TabPanel, Tabs} from "react-tabs";
+import {Tab, TabPanel, Tabs} from "react-tabs";
 import AnimePage from "./pages/AnimePage";
 import ContactPage from "./pages/ContactPage";
+import {TabList} from "./components/StyledComponents";
 
 function App() {
     return (
@@ -11,7 +12,7 @@ function App() {
         <TabList>
             <Tab>Home</Tab>
             <Tab>About</Tab>
-            <Tab>Anime's'</Tab>
+            <Tab>Anime's</Tab>
             <Tab>Contact us</Tab>
         </TabList>
     <TabPanel>
