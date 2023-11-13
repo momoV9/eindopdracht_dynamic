@@ -124,3 +124,53 @@ export const AnimeDetailsModal = styled.div`
     margin-bottom: 10px;
   }
 `;
+
+
+
+
+
+
+
+export const ShopContainer = styled.div`
+  padding: 20px;
+`;
+
+export const ShopHeader = styled.div`
+  text-align: center;
+  margin-bottom: 20px;
+`;
+
+export const ProductGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+`;
+
+export const ProductCard = styled.div`
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+`;
+
+export const ProductName = styled.h3`
+  font-size: 18px;
+  margin-bottom: 5px;
+`;
+
+export const ProductPrice = styled.p`
+  font-weight: bold;
+  margin-bottom: 10px;
+`;
+
+export const AddToCartButton = styled.button`
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: #0056b3;
+  }`;

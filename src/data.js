@@ -46,3 +46,9 @@ export const featuredAnime = [
     },
 
 ];
+
+export const products = [
+    { id: 1, name: 'Naruto T-shirt', price: 20},
+    { id: 2, name: 'One Piece DVD Box Set', price: 50  },
+
+];

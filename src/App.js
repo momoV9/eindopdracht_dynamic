@@ -5,12 +5,15 @@ import {Tab, TabPanel, Tabs} from "react-tabs";
 import AnimePage from "./pages/AnimePage";
 import ContactPage from "./pages/ContactPage";
 import {TabList} from "./components/StyledComponents";
+import {ShopPage} from "./pages/ShopPage";
+
 
 function App() {
     return (
         <Tabs >
         <TabList>
             <Tab>Home</Tab>
+            <Tab>Shop</Tab>
             <Tab>About</Tab>
             <Tab>Anime's</Tab>
             <Tab>Contact us</Tab>
@@ -18,6 +21,9 @@ function App() {
     <TabPanel>
         <HomePage/>
     </TabPanel>
+            <TabPanel>
+                <ShopPage/>
+            </TabPanel>
     <TabPanel>
         <AboutPage/>
     </TabPanel>
