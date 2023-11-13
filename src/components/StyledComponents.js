@@ -127,7 +127,7 @@ export const AnimeDetailsModal = styled.div`
 
 
 
-
+//ShopPage
 
 
 
@@ -174,3 +174,34 @@ export const AddToCartButton = styled.button`
   &:hover {
     background-color: #0056b3;
   }`;
+
+
+export const Cart = styled.div`
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+`;
+
+export const CartItem = styled.li`
+  list-style: none;
+  margin: 5px 0;
+`;
+
+export const  Total = styled.p`
+  font-weight: bold;
+  margin-top: 10px;
+  text-align: right;
+`;
+
+export const  CartContainer = styled.div`
+  width: 30%;
+    max-height: 400px; 
+  overflow-y: auto;
+`;
+
+
+export const ContentContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+`;
