@@ -10,13 +10,7 @@ export const TabList = styled.div`
 
 
 `;
-export const Button = styled.button`
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-`;
+
 
 export const AnimeContainer = styled.div`
   display: flex;
@@ -41,10 +35,7 @@ export const Wrapper = styled.div`
   min-height: 100vh;
 `;
 
-export const Title = styled.h1`
-  font-size: 32px;
-  margin-bottom: 20px;
-`;
+
 
 
 export const GenreButtons = styled.div`
@@ -264,4 +255,113 @@ export const Heading = styled.h1`
 export const AdditionalText = styled.p`
   font-size: 16px;
   margin-bottom: 20px;
+`;
+
+//animeApiPage
+
+export const AnimeContainer2 = styled.div`
+  max-width: 100%;
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+`;
+
+export const AnimeListTitle = styled.h1`
+  font-size: 24px;
+  margin-bottom: 20px;
+`;
+
+export const AnimeList = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+`;
+
+
+
+export const AnimeImage2 = styled.img`
+  max-width: 100%;
+  height: auto;
+  border-bottom: 2px solid #333;
+  border-radius: 8px;
+`;
+
+export const AnimeTitle = styled.h3`
+  font-size: 18px;
+  margin: 10px;
+`;
+
+export const AnimeItemWrapper = styled.div`
+  flex: 0 0 19%;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  border: 2px solid #333;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer; 
+  @media (max-width: 768px) {
+    flex: 0 0 48%;
+  }
+`;
+
+//AnimeDetailPage
+
+export const AnimeDetailContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f5f5; 
+  padding: 40px;
+  box-sizing: border-box;
+  text-align: center;
+`;
+
+export const AnimeImage3 = styled.img`
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 20px;
+`;
+
+export const AnimeDetailTitle = styled.h2`
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #333;
+`;
+
+export const AnimeDetailContent = styled.div`
+  text-align: left;
+  line-height: 1.6;
+  color: #555;
+  max-width: 800px; 
+  margin: 0 auto;
+  margin-bottom: 20px;
+
+  p {
+    margin-bottom: 15px;
+  }
+
+  a {
+    color: #007bff; 
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+`;
+
+export const CloseButton = styled.button`
+  background-color: #333;
+  color: #fff;
+  padding: 12px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #555;
+  }
 `;
