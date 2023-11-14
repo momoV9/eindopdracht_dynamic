@@ -14,8 +14,8 @@ function App() {
         <TabList>
             <Tab>Home</Tab>
             <Tab>Shop</Tab>
-            <Tab>About</Tab>
             <Tab>Anime's</Tab>
+            <Tab>About</Tab>
             <Tab>Contact us</Tab>
         </TabList>
     <TabPanel>
@@ -25,11 +25,11 @@ function App() {
                 <ShopPage/>
             </TabPanel>
     <TabPanel>
-        <AboutPage/>
-    </TabPanel>
-    <TabPanel>
         <AnimePage/>
     </TabPanel>
+            <TabPanel>
+            <AboutPage/>
+        </TabPanel>
     <TabPanel>
     <ContactPage/>
     </TabPanel>
