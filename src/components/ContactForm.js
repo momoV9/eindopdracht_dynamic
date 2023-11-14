@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { addDoc, collection } from 'firebase/firestore';
 import { firestoreDB } from '../services/firebase';
+import {FormContainer, Input, Label, SubmitButton, Textarea, Form} from "./StyledComponents";
+
+
+
 
 function ContactForm() {
     const [name, setName] = useState('');
@@ -12,7 +16,6 @@ function ContactForm() {
 
         const contactsRef = collection(firestoreDB, 'contacts');
 
-
         try {
             await addDoc(contactsRef, {
                 name: name,
@@ -21,7 +24,6 @@ function ContactForm() {
             });
 
             console.log('Form data submitted successfully to Firestore.');
-
 
             setName('');
             setEmail('');
@@ -32,24 +34,17 @@ function ContactForm() {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <label>
-                Name:
-                <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
-            </label>
-            <br />
-            <label>
-                Email:
-                <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-            </label>
-            <br />
-            <label>
-                Message:
-                <textarea value={message} onChange={(e) => setMessage(e.target.value)} />
-            </label>
-            <br />
-            <button type="submit">Submit</button>
-        </form>
+        <FormContainer>
+            <Form onSubmit={handleSubmit}>
+                <Label>Name:</Label>
+                <Input type="text" value={name} onChange={(e) => setName(e.target.value)} />
+                <Label>Email:</Label>
+                <Input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                <Label>Message:</Label>
+                <Textarea value={message} onChange={(e) => setMessage(e.target.value)} />
+                <SubmitButton type="submit">Submit</SubmitButton>
+            </Form>
+        </FormContainer>
     );
 }
 

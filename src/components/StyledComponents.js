@@ -205,3 +205,63 @@ export const ContentContainer = styled.div`
   justify-content: space-between;
   align-items: flex-start;
 `;
+
+
+//contactForm
+
+export const FormContainer = styled.div`
+  max-width: 400px;
+  margin: 0 auto;
+`;
+
+export const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const Label = styled.label`
+  font-weight: bold;
+  margin-bottom: 8px;
+`;
+
+export const Input = styled.input`
+  padding: 8px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+`;
+
+export const Textarea = styled.textarea`
+  padding: 8px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+`;
+
+export const SubmitButton = styled.button`
+  background-color: #007bff;
+  color: white;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+`;
+
+
+//contactPage
+
+export const PageContainer = styled.div`
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+`;
+
+export const Heading = styled.h1`
+  font-size: 24px;
+  margin-bottom: 20px;
+`;
+
+export const AdditionalText = styled.p`
+  font-size: 16px;
+  margin-bottom: 20px;
+`;
