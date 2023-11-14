@@ -1,6 +1,13 @@
 import styled from "styled-components";
 
 
+//app
+
+export const AppContainer = styled.div`
+  background-color: #f5f5f5;
+`;
+
+
 export const TabList = styled.div`
   display: flex;
   justify-content: space-around;
@@ -68,12 +75,7 @@ export const ClearFilterButton = styled.button`
   cursor: pointer;
 `;
 
-export const Footer = styled.footer`
-  background-color: #333;
-  color: #fff;
-  padding: 20px;
-  text-align: center;
-`;
+
 export const Content = styled.div`
   flex-grow: 1;
   padding: 20px;
@@ -124,6 +126,9 @@ export const AnimeDetailsModal = styled.div`
 
 export const ShopContainer = styled.div`
   padding: 20px;
+   width: 90vw;
+  height: 100vh;
+  
 `;
 
 export const ShopHeader = styled.div`
@@ -133,7 +138,7 @@ export const ShopHeader = styled.div`
 
 export const ProductGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+
   gap: 20px;
 `;
 
@@ -245,6 +250,8 @@ export const PageContainer = styled.div`
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
+
+  height: 100vh;
 `;
 
 export const Heading = styled.h1`
@@ -365,3 +372,7 @@ export const CloseButton = styled.button`
     background-color: #555;
   }
 `;
+
+
+
+

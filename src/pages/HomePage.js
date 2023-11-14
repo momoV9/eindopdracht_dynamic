@@ -8,7 +8,6 @@ import {
     GenreButton,
     GenreButtons,
     Wrapper,
-    Footer,
     Content,
     AnimeDetailsModal,
 } from "../components/StyledComponents";
@@ -102,11 +101,7 @@ const HomePage = () => {
                     </AnimeDetailsModal>
                 )}
             </Content>
-            <Footer>
-                <p>&copy; Anime World</p>
-                <p>Contact: info@animeworld.com</p>
-                <p>Follow us on social media: @AnimeWorld</p>
-            </Footer>
+
         </Wrapper>
     );
 };
