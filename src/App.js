@@ -15,7 +15,7 @@ function App() {
             <Tab>Home</Tab>
             <Tab>Shop</Tab>
             <Tab>Anime's</Tab>
-            <Tab>Anime DB</Tab>
+            <Tab>Anime Api</Tab>
             <Tab>Contact us</Tab>
         </TabList>
     <TabPanel>
