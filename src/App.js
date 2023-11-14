@@ -1,7 +1,7 @@
 import React from "react";
 import HomePage from "./pages/HomePage";
 import {Tab, TabPanel, Tabs} from "react-tabs";
-import {AnimePage} from "./pages/AnimePage";
+import {ReviewPage} from "./pages/ReviewPage";
 import ContactPage from "./pages/ContactPage";
 import {AppContainer, TabList} from "./components/StyledComponents";
 import {ShopPage} from "./pages/ShopPage";
@@ -34,7 +34,7 @@ function App() {
                 <AnimeApiPage />
             </TabPanel>
                 <TabPanel>
-                    <AnimePage />
+                    <ReviewPage />
                 </TabPanel>
 
                 <TabPanel>
