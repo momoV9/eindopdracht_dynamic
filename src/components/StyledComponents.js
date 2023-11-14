@@ -126,9 +126,8 @@ export const AnimeDetailsModal = styled.div`
 
 export const ShopContainer = styled.div`
   padding: 20px;
-   width: 90vw;
+  width: 90vw;
   height: 100vh;
-  
 `;
 
 export const ShopHeader = styled.div`
@@ -138,7 +137,6 @@ export const ShopHeader = styled.div`
 
 export const ProductGrid = styled.div`
   display: grid;
-
   gap: 20px;
 `;
 
@@ -169,38 +167,56 @@ export const AddToCartButton = styled.button`
 
   &:hover {
     background-color: #0056b3;
-  }`;
-
+  }
+`;
 
 export const Cart = styled.div`
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 10px;
+
 `;
 
 export const CartItem = styled.li`
   list-style: none;
   margin: 5px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 `;
 
-export const  Total = styled.p`
+export const Total = styled.p`
   font-weight: bold;
   margin-top: 10px;
   text-align: right;
 `;
 
-export const  CartContainer = styled.div`
+export const CartContainer = styled.div`
   width: 30%;
-    max-height: 400px; 
+  max-height: 400px;
   overflow-y: auto;
 `;
-
 
 export const ContentContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
 `;
+
+export const RemoveButton = styled.button`
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: #c82333;
+  }
+`;
+
 
 
 //contactForm
