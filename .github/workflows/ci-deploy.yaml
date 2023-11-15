@@ -1,7 +1,7 @@
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   deploy:
@@ -24,11 +24,12 @@ jobs:
         run: |
           git config user.name $user_name
           git config user.email $user_email
-          git remote set-url origin https://x-access-token:${github_token}@github.com/${repository}.git
+          git remote set-url origin https://x-access-token:${repo_token}@github.com/${repository}.git
           npm run deploy
 
     env:
       user_name: "$GITHUB_ACTOR"
       user_email: "$GITHUB_ACTOR@bots.github.com"
       github_token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
+      repo_token: ${{ secrets.GITHUB_TOKEN }}
       repository: ${{ github.repository }}
