@@ -10,6 +10,9 @@ import AnimeApiPage from "./pages/AnimeApiPage";
 import Footer from "./components/Footer";
 
 import ForumPage from "./components/ForumPage";
+import {AnimeProvider} from "./contexts/AnimeContext";
+import ShareAnimePage from "./pages/ShareAnimePage";
+import {ImageUploadProvider} from "./contexts/ImageUploadContext";
 
 
 
@@ -17,7 +20,8 @@ import ForumPage from "./components/ForumPage";
 
 function App() {
     return (
-
+        <AnimeProvider>
+            <ImageUploadProvider>
             <AppContainer>
                 <Tabs>
                     <TabList>
@@ -27,6 +31,7 @@ function App() {
                         <Tab>Review</Tab>
                         <Tab>Forum</Tab>
                         <Tab>Contact us</Tab>
+                        <Tab>Share</Tab>
                     </TabList>
                     <TabPanel>
                         <HomePage />
@@ -46,9 +51,14 @@ function App() {
                     <TabPanel>
                         <ContactPage />
                     </TabPanel>
+                    <TabPanel>
+                        <ShareAnimePage />
+                    </TabPanel>
                 </Tabs>
                 <Footer />
             </AppContainer>
+            </ImageUploadProvider>
+</AnimeProvider>
 
     );
 }
