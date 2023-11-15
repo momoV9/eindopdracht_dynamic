@@ -1,17 +1,17 @@
 import React, { useState } from "react";
+import { Button, Card, Alert } from "react-bootstrap";
 import {
-    AnimeCard,
     AnimeContainer,
-    AnimeImage,
-    ClearFilterButton,
     FilterInfo,
-    GenreButton,
     GenreButtons,
     Wrapper,
     Content,
     AnimeDetailsModal,
 } from "../components/StyledComponents";
 import { featuredAnime } from "../data";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
 
 const HomePage = () => {
     const [selectedGenre, setSelectedGenre] = useState(null);
@@ -42,30 +42,28 @@ const HomePage = () => {
     return (
         <Wrapper>
             <Content>
-                <div>
-                    <p>
-                        <strong>Welcome to the world of anime!</strong>
-                    </p>
-                    <p>
-                        If you're an anime enthusiast, you've come to the right place. Explore a wide
-                        selection of your favorite anime series and discover new adventures.
-                    </p>
-                    <p>
-                        Whether you're into action, adventure, or any other genre, our collection has
-                        something for everyone. Start your anime journey here!
-                    </p>
-                </div>
+                <Alert variant="info">
+                    <strong>Welcome to the world of anime!</strong> If you're an anime enthusiast, you've
+                    come to the right place. Explore a wide selection of your favorite anime series and
+                    discover new adventures. Whether you're into action, adventure, or any other genre, our
+                    collection has something for everyone. Start your anime journey here!
+                </Alert>
 
                 <GenreButtons>
-                    <GenreButton onClick={() => handleGenreFilter("Action")}>Action</GenreButton>
-                    <GenreButton onClick={() => handleGenreFilter("Adventure")}>Adventure</GenreButton>
-
+                    <Button variant="primary" onClick={() => handleGenreFilter("Action")}>
+                        Action
+                    </Button>
+                    <Button variant="primary" onClick={() => handleGenreFilter("Adventure")}>
+                        Adventure
+                    </Button>
                 </GenreButtons>
 
                 {selectedGenre && (
                     <FilterInfo>
                         <p>Filtering by: {selectedGenre}</p>
-                        <ClearFilterButton onClick={clearGenreFilter}>Clear Filter</ClearFilterButton>
+                        <Button variant="danger" onClick={clearGenreFilter}>
+                            Clear Filter
+                        </Button>
                     </FilterInfo>
                 )}
 
@@ -73,10 +71,16 @@ const HomePage = () => {
                     <h2>Featured Anime</h2>
                     <AnimeContainer>
                         {filteredAnime.map((anime) => (
-                            <AnimeCard key={anime.id} onClick={() => openAnimeDetails(anime)}>
-                                <AnimeImage src={anime.image} alt={anime.title} />
-                                <p>{anime.title}</p>
-                            </AnimeCard>
+                            <Card key={anime.id} onClick={() => openAnimeDetails(anime)}>
+                                <Card.Img
+                                    src={anime.image}
+                                    alt={anime.title}
+                                    style={{ height: "200px", objectFit: "cover" }}
+                                />
+                                <Card.Body>
+                                    <Card.Title>{anime.title}</Card.Title>
+                                </Card.Body>
+                            </Card>
                         ))}
                     </AnimeContainer>
                 </div>
@@ -101,7 +105,6 @@ const HomePage = () => {
                     </AnimeDetailsModal>
                 )}
             </Content>
-
         </Wrapper>
     );
 };

@@ -21,20 +21,10 @@ export const TabList = styled.div`
 
 export const AnimeContainer = styled.div`
   display: flex;
-  flex-wrap: nowrap;
   overflow-x: auto;
-   justify-content: center;
+  justify-content: center;
+  gap: 16px; 
 `;
-
-export const AnimeCard = styled.div`
-  margin-right: 20px;
-`;
-
-export const AnimeImage = styled.img`
-  width: 300px;
-  height: 150px;
-`;
-
 
 export const Wrapper = styled.div`
   display: flex;
@@ -42,6 +32,10 @@ export const Wrapper = styled.div`
   min-height: 100vh;
 `;
 
+export const Content = styled.div`
+  flex-grow: 1;
+  padding: 20px;
+`;
 
 
 
@@ -51,34 +45,11 @@ export const GenreButtons = styled.div`
   margin-bottom: 20px;
 `;
 
-export const GenreButton = styled.button`
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-right: 10px;
-`;
+
 
 export const FilterInfo = styled.div`
   text-align: center;
   margin-bottom: 20px;
-`;
-
-export const ClearFilterButton = styled.button`
-  background-color: #e74c3c;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 4px;
-  cursor: pointer;
-`;
-
-
-export const Content = styled.div`
-  flex-grow: 1;
-  padding: 20px;
 `;
 
 export const AnimeDetailsModal = styled.div`
