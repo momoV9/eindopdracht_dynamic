@@ -37,11 +37,11 @@ function ContactForm() {
         <FormContainer>
             <Form onSubmit={handleSubmit}>
                 <Label>Name:</Label>
-                <Input type="text" value={name} onChange={(e) => setName(e.target.value)} />
+                <Input type="text" placeholder="Write your name" value={name} onChange={(e) => setName(e.target.value)} />
                 <Label>Email:</Label>
-                <Input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                <Input type="email" placeholder="Write your email" value={email} onChange={(e) => setEmail(e.target.value)} />
                 <Label>Message:</Label>
-                <Textarea value={message} onChange={(e) => setMessage(e.target.value)} />
+                <Textarea value={message} placeholder="Write your message" onChange={(e) => setMessage(e.target.value)} />
                 <SubmitButton type="submit">Submit</SubmitButton>
             </Form>
         </FormContainer>
