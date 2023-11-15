@@ -253,8 +253,22 @@ export const AdditionalText = styled.p`
 
 //animeApiPage
 
+export const SearchContainer = styled.div`
+    margin-bottom: 20px;
+`;
+
+export const SearchInput = styled.input`
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+`;
 export const AnimeContainer2 = styled.div`
   max-width: 100%;
+  height: 100vh;
   margin: 0;
   padding: 20px;
   box-sizing: border-box;

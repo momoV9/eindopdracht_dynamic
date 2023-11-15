@@ -7,7 +7,7 @@ import {
     AnimeItemWrapper,
     AnimeList,
     AnimeListTitle,
-    AnimeTitle
+    AnimeTitle, SearchContainer, SearchInput
 } from "../components/StyledComponents";
 
 
@@ -16,6 +16,7 @@ import {
 const AnimeApiPage = () => {
     const [animeList, setAnimeList] = useState([]);
     const [selectedAnime, setSelectedAnime] = useState(null);
+    const [searchTerm, setSearchTerm] = useState('');
 
     useEffect(() => {
         axios
@@ -36,15 +37,31 @@ const AnimeApiPage = () => {
         setSelectedAnime(null);
     };
 
+    const handleSearchChange = (event) => {
+        setSearchTerm(event.target.value);
+    };
+
+    const filteredAnimeList = animeList.filter((anime) =>
+        anime.title.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
     return (
         <AnimeContainer2>
             <AnimeListTitle>Anime List</AnimeListTitle>
+            <SearchContainer>
+                <SearchInput
+                    type="text"
+                    placeholder="Search by title..."
+                    value={searchTerm}
+                    onChange={handleSearchChange}
+                />
+            </SearchContainer>
             {selectedAnime ? (
                 <AnimeDetailPage anime={selectedAnime} onClose={handleCloseDetail} />
             ) : (
                 <AnimeList>
-                    {animeList.map((anime) => (
-                        <AnimeItemWrapper key={anime.mal_id} onClick={() => handleAnimeClick(anime)}>
+                    {filteredAnimeList.map((anime) => (
+                        <AnimeItemWrapper key={anime.id} onClick={() => handleAnimeClick(anime)}>
                             <AnimeImage2 src={anime.images.jpg.image_url} alt={anime.title} />
                             <AnimeTitle>{anime.title}</AnimeTitle>
                         </AnimeItemWrapper>
