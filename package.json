@@ -30,7 +30,8 @@
     "eject": "react-scripts eject",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "chromatic": "npx chromatic --project-token=chpt_aa4804c1364782a"
+    "chromatic": "npx chromatic --project-token=chpt_aa4804c1364782a",
+    "format": "prettier --write \"src/**/*.js\""
   },
   "eslintConfig": {
     "extends": [
@@ -67,6 +68,7 @@
     "eslint-plugin-storybook": "^0.6.15",
     "file-loader": "^6.2.0",
     "gh-pages": "^6.0.0",
+    "prettier": "^3.1.0",
     "storybook": "^7.5.3",
     "webpack": "^5.89.0"
   },

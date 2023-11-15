@@ -1,25 +1,38 @@
-import React, { createContext, useCallback, useContext, useMemo, useState } from 'react';
+import React, {
+  createContext,
+  useCallback,
+  useContext,
+  useMemo,
+  useState,
+} from 'react'
 
-const ImageUploadContext = createContext({});
+const ImageUploadContext = createContext({})
 
 export function ImageUploadProvider(props) {
-    const [image, setImage] = useState(null);
+  const [image, setImage] = useState(null)
 
-    const uploadImage = useCallback((newImage) => {
-        setImage(newImage);
-    }, []);
+  const uploadImage = useCallback((newImage) => {
+    setImage(newImage)
+  }, [])
 
-    const clearImage = useCallback(() => {
-        setImage(null);
-    }, []);
+  const clearImage = useCallback(() => {
+    setImage(null)
+  }, [])
 
-    const api = useMemo(() => ({
-        image,
-        uploadImage,
-        clearImage,
-    }), [image, uploadImage, clearImage]);
+  const api = useMemo(
+    () => ({
+      image,
+      uploadImage,
+      clearImage,
+    }),
+    [image, uploadImage, clearImage],
+  )
 
-    return <ImageUploadContext.Provider value={api}>{props.children}</ImageUploadContext.Provider>;
+  return (
+    <ImageUploadContext.Provider value={api}>
+      {props.children}
+    </ImageUploadContext.Provider>
+  )
 }
 
-export const useImageUploadContext = () => useContext(ImageUploadContext);
+export const useImageUploadContext = () => useContext(ImageUploadContext)

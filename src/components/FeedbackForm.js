@@ -1,7 +1,7 @@
-import styled from "styled-components";
-import {useState} from "react";
-import {addDoc, collection} from "firebase/firestore";
-import {firestoreDB} from "../services/firebase";
+import styled from 'styled-components'
+import { useState } from 'react'
+import { addDoc, collection } from 'firebase/firestore'
+import { firestoreDB } from '../services/firebase'
 
 const ReviewFormContainer = styled.form`
   display: flex;
@@ -20,87 +20,78 @@ const ReviewFormContainer = styled.form`
     border: none;
     cursor: pointer;
   }
-`;
+`
 
 const Notification = styled.div`
   background-color: #f5f5f5;
   color: #333;
   padding: 10px;
   margin-top: 10px;
-`;
+`
 
 const ErrorNotification = styled(Notification)`
   background-color: red;
   color: #fff;
-`;
+`
 
 const FeedbackForm = ({ animeId }) => {
-    const [reviewText, setReviewText] = useState("");
-    const [showNotification, setShowNotification] = useState(false);
-    const [showErrorNotification, setShowErrorNotification] = useState(false);
+  const [reviewText, setReviewText] = useState('')
+  const [showNotification, setShowNotification] = useState(false)
+  const [showErrorNotification, setShowErrorNotification] = useState(false)
 
-    const handleReviewSubmit = async (e) => {
-        e.preventDefault();
+  const handleReviewSubmit = async (e) => {
+    e.preventDefault()
 
-        if (reviewText.trim() !== "") {
-            try {
+    if (reviewText.trim() !== '') {
+      try {
+        const docRef = await addDoc(collection(firestoreDB, `review`), {
+          title: animeId,
+          reviews: {
+            text: reviewText,
+            timestamp: new Date().toString(),
+          },
+        })
 
-                const docRef = await addDoc(collection(firestoreDB, `review`), {
-                    title: animeId,
-                    reviews: {
-                        text: reviewText,
-                        timestamp: new Date().toString(),
-                    },
-                });
+        console.log('Review added with ID: ', docRef.id)
 
-                console.log("Review added with ID: ", docRef.id);
+        setShowNotification(true)
 
+        setReviewText('')
 
-                setShowNotification(true);
+        setTimeout(() => {
+          setShowNotification(false)
+        }, 3000)
+      } catch (error) {
+        console.error('Error adding review: ', error)
+      }
+    } else {
+      setShowErrorNotification(true)
 
+      setTimeout(() => {
+        setShowErrorNotification(false)
+      }, 3000)
+    }
+  }
 
-                setReviewText("");
+  return (
+    <ReviewFormContainer onSubmit={handleReviewSubmit}>
+      <textarea
+        value={reviewText}
+        onChange={(e) => setReviewText(e.target.value)}
+        placeholder="Write your review here"
+        rows={4}
+      ></textarea>
+      <button type="submit">Submit Review</button>
 
-                setTimeout(() => {
-                    setShowNotification(false);
-                }, 3000);
-            } catch (error) {
-                console.error("Error adding review: ", error);
-            }
-        } else {
+      {showNotification && <Notification>Review has been sent!</Notification>}
 
-            setShowErrorNotification(true);
+      {showErrorNotification && (
+        <ErrorNotification>
+          Please write something before submitting!
+        </ErrorNotification>
+      )}
+    </ReviewFormContainer>
+  )
+}
 
-
-            setTimeout(() => {
-                setShowErrorNotification(false);
-            }, 3000);
-        }
-    };
-
-    return (
-        <ReviewFormContainer onSubmit={handleReviewSubmit}>
-            <textarea
-                value={reviewText}
-                onChange={(e) => setReviewText(e.target.value)}
-                placeholder="Write your review here"
-                rows={4}
-            ></textarea>
-            <button type="submit">Submit Review</button>
-
-            {showNotification && (
-                <Notification>
-                    Review has been sent!
-                </Notification>
-            )}
-
-            {showErrorNotification && (
-                <ErrorNotification>
-                    Please write something before submitting!
-                </ErrorNotification>
-            )}
-        </ReviewFormContainer>
-    );
-};
-
-export default FeedbackForm;
+export default FeedbackForm
