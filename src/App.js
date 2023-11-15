@@ -9,40 +9,47 @@ import "./services/firebase"
 import AnimeApiPage from "./pages/AnimeApiPage";
 import Footer from "./components/Footer";
 
+import ForumPage from "./components/ForumPage";
+
 
 
 
 
 function App() {
     return (
-        <AppContainer>
-            <Tabs>
-                <TabList>
-                    <Tab>Home</Tab>
-                    <Tab>Shop</Tab>
-                    <Tab>Anime's</Tab>
-                    <Tab>Review</Tab>
-                    <Tab>Contact us</Tab>
-                </TabList>
-                <TabPanel>
-                    <HomePage />
-                </TabPanel>
-                <TabPanel>
-                    <ShopPage />
-                </TabPanel>
-                <TabPanel>
-                <AnimeApiPage />
-            </TabPanel>
-                <TabPanel>
-                    <ReviewPage />
-                </TabPanel>
 
-                <TabPanel>
-                    <ContactPage />
-                </TabPanel>
-            </Tabs>
-            <Footer />
-        </AppContainer>
+            <AppContainer>
+                <Tabs>
+                    <TabList>
+                        <Tab>Home</Tab>
+                        <Tab>Shop</Tab>
+                        <Tab>Anime's</Tab>
+                        <Tab>Review</Tab>
+                        <Tab>Forum</Tab>
+                        <Tab>Contact us</Tab>
+                    </TabList>
+                    <TabPanel>
+                        <HomePage />
+                    </TabPanel>
+                    <TabPanel>
+                        <ShopPage />
+                    </TabPanel>
+                    <TabPanel>
+                        <AnimeApiPage />
+                    </TabPanel>
+                    <TabPanel>
+                        <ReviewPage />
+                    </TabPanel>
+                    <TabPanel>
+                        <ForumPage />
+                    </TabPanel>
+                    <TabPanel>
+                        <ContactPage />
+                    </TabPanel>
+                </Tabs>
+                <Footer />
+            </AppContainer>
+
     );
 }
 
