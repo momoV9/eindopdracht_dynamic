@@ -9,7 +9,7 @@ import "./services/firebase"
 import AnimeApiPage from "./pages/AnimeApiPage";
 import Footer from "./components/Footer";
 
-import ForumPage from "./components/ForumPage";
+import ForumPage from "./pages/ForumPage";
 import {AnimeProvider} from "./contexts/AnimeContext";
 import ShareAnimePage from "./pages/ShareAnimePage";
 import {ImageUploadProvider} from "./contexts/ImageUploadContext";
