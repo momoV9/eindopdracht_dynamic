@@ -3,6 +3,7 @@ import { addDoc, collection, getDocs } from 'firebase/firestore';
 import { firestoreDB } from '../services/firebase';
 import { Container, Form as BootstrapForm, Button } from 'react-bootstrap';
 import styled from 'styled-components';
+import {Label} from "../components/StyledComponents";
 
 const ForumContainer = styled(Container)`
     height: 100vh;
@@ -102,25 +103,26 @@ function ForumPage() {
             <ForumContent>
 
                         <ForumForm onSubmit={handleSubmit}>
-                            <BootstrapForm.Group controlId="formUsername">
-                                <BootstrapForm.Label>Username:</BootstrapForm.Label>
+                            <BootstrapForm controlId="formUsername">
+                                <Label>Username:</Label>
                                 <StyledFormControl
                                     type="text"
                                     placeholder="Enter your username"
                                     value={username}
                                     onChange={(e) => setUsername(e.target.value)}
                                 />
-                            </BootstrapForm.Group>
+                            </BootstrapForm>
+                            <Label>Your Post:</Label>
+                            <BootstrapForm controlId="formPost">
 
-                            <BootstrapForm.Group controlId="formPost">
-                                <BootstrapForm.Label>Your Post:</BootstrapForm.Label>
                                 <StyledFormControl
+                                    placeholder="Enter your text"
                                     as="textarea"
                                     rows={3}
                                     value={newPost}
                                     onChange={(e) => setNewPost(e.target.value)}
                                 />
-                            </BootstrapForm.Group>
+                            </BootstrapForm>
 
                             <SubmitButton variant="primary" type="submit">
                                 Post
