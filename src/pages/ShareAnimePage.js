@@ -74,7 +74,6 @@ const ShareAnimePage = () => {
         removeAnime(animeId);
     };
 
-
     const handleImageChange = (e) => {
         const selectedImage = e.target.files[0];
 
@@ -99,6 +98,7 @@ const ShareAnimePage = () => {
 
             <ContentContainer>
                 <FormContainer>
+                    <Title>Share your favorite anime</Title>
                     <Input
                         type="text"
                         placeholder="Enter new anime"
@@ -121,8 +121,8 @@ const ShareAnimePage = () => {
                     ))}
                 </FormContainer>
 
-
                 <ImageContainer>
+                    <Title>Share an anime picture</Title>
                     <ImageUploadInput type="file" onChange={handleImageChange} />
                     {image && (
                         <div>
@@ -139,12 +139,6 @@ const ShareAnimePage = () => {
                     )}
                 </ImageContainer>
             </ContentContainer>
-
-
-
-
-
-
         </ShareAnimePageContainer>
     );
 };
