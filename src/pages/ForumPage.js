@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { addDoc, collection, getDocs } from 'firebase/firestore'
 import { firestoreDB } from '../services/firebase'
-import { Container, Form as BootstrapForm, Button } from 'react-bootstrap'
+import {Container, Form as BootstrapForm, Button} from 'react-bootstrap'
 import styled from 'styled-components'
 import { Label } from '../components/StyledComponents'
 
@@ -11,6 +11,7 @@ const ForumContainer = styled(Container)`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 100px;
 `
 
 const ForumContent = styled.div`
@@ -101,8 +102,11 @@ function ForumPage() {
   }
 
   return (
+
     <ForumContainer>
+      <h1>Deel je leuke ervaringen met iedereen!!!</h1>
       <ForumContent>
+
         <ForumForm onSubmit={handleSubmit}>
           <BootstrapForm controlId="formUsername">
             <Label>Username:</Label>

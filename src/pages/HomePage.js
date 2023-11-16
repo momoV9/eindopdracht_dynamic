@@ -38,6 +38,7 @@ const HomePage = () => {
   }
 
   return (
+      <>
     <Wrapper>
       <Content>
         <Alert variant="info">
@@ -108,6 +109,7 @@ const HomePage = () => {
         )}
       </Content>
     </Wrapper>
+      </>
   )
 }
 
